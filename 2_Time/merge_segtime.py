@@ -1,18 +1,20 @@
 import numpy as np
+
 np.set_printoptions(precision=2, suppress=True)
+
 
 def merge_float(data):
     # data.split(' ')
     # print(data.split(' ')[2])
-    data = data.split(' ')[0]
+    data = data.split(" ")[0]
     # print("MUNSNDAS"+data)
     merged = merge_data + float(data)
 
     return merged
 
 
-f_read = open("execution_time.txt",'r')
-f_write = open("result_excution_time.txt",'w')
+f_read = open("0_segmentation_time.txt", "r")
+f_write = open("0_result_segmentation_time.txt", "w")
 
 lines = f_read.readlines()
 n = 1
@@ -31,4 +33,3 @@ for line in lines:
         n = n + 1
 f_read.close
 f_write.close
-

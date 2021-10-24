@@ -27,10 +27,10 @@ def seprate(data):
     return seprated
 
 
-f_read_excution = open("result_execution_time(0.3).txt", "r")
-f_read_projection = open("result_projection_time.txt", "r")
+f_read_excution = open("0_result_segmentation_time.txt", "r")
+f_read_projection = open("1_result_projection_time.txt", "r")
 
-f_write = open("result_merge_time.txt", "w")
+f_write = open("2_result_merge_time.txt", "w")
 
 lines_excution = f_read_excution.readlines()
 lines_projection = f_read_projection.readlines()

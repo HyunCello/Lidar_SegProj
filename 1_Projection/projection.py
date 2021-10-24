@@ -227,9 +227,9 @@ def modify(data):
         return 0
 
 
-f_read = open("input_data/train.txt", "r")
-f_write = open("result_train_add_x_1.txt", "w")
-f_write_time = open("result_time.txt", "w")
+f_read = open("0_result_train.txt", "r")
+f_write = open("1_result_train_projection.txt", "w")
+f_write_time = open("1_result_projection_time.txt", "w")
 num_prev = 0
 
 lines = f_read.readlines()
