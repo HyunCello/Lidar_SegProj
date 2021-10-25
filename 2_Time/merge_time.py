@@ -27,10 +27,10 @@ def seprate(data):
     return seprated
 
 
-f_read_excution = open("0_result_segmentation_time.txt", "r")
-f_read_projection = open("1_result_projection_time.txt", "r")
+f_read_excution = open("../4_Result/211024/0_time_seg_merged.txt", "r")
+f_read_projection = open("../4_Result/211024/1_time_proj.txt", "r")
 
-f_write = open("2_result_merge_time.txt", "w")
+f_write = open("../4_Result/211024/2_time.txt", "w")
 
 lines_excution = f_read_excution.readlines()
 lines_projection = f_read_projection.readlines()
@@ -46,7 +46,7 @@ for line_excution in lines_excution:
 
         if excution_seprate[0] == projection_seprate[0]:
             proper_data = projection_seprate[1]
-    write_data = float(proper_data) / 4 + (float(excution_seprate[1]) / 1000000)
+    write_data = float(proper_data) + (float(excution_seprate[1]))
     print(write_data)
     f_write.write(excution_seprate[0] + " " + str(write_data) + "\n")
     proper_data = 0

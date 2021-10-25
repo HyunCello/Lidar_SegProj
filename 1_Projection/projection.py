@@ -227,9 +227,9 @@ def modify(data):
         return 0
 
 
-f_read = open("0_result_train.txt", "r")
-f_write = open("1_result_train_projection.txt", "w")
-f_write_time = open("1_result_projection_time.txt", "w")
+f_read = open("../4_Result/211024/0_seg.txt", "r")
+f_write = open("../4_Result/211024/1_seg_proj.txt", "w")
+f_write_time = open("../4_Result/211024/1_time_proj.txt", "w")
 num_prev = 0
 
 lines = f_read.readlines()
@@ -241,7 +241,7 @@ for line in lines:
     line_modified = modify(line_seprated)
     if line_modified != 0:
         result = projection(line_modified)
-    # print(line_seprated[0])
+        print(line_seprated[0])
     else:
         continue
     if result != 0:
@@ -250,10 +250,12 @@ for line in lines:
         # )
 
         f_write.write(str(line_seprated[0]) + " " + result)
-        # if num_prev < int(line_seprated[0]):
-        #     # print(line_seprated[0])
-        #     # print(time.time() - start)
-        #     f_write_time.write(str(line_seprated[0]) + " " + str(time.time() - start) + "\n")
+        if num_prev < int(line_seprated[0]):
+            # print(line_seprated[0])
+            # print(time.time() - start)
+            f_write_time.write(
+                str(line_seprated[0]) + " " + str(time.time() - start) + "\n"
+            )
 
         start = time.time()
         num_prev = int(line_seprated[0])

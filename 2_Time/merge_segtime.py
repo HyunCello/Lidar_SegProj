@@ -13,8 +13,8 @@ def merge_float(data):
     return merged
 
 
-f_read = open("0_segmentation_time.txt", "r")
-f_write = open("0_result_segmentation_time.txt", "w")
+f_read = open("../4_Result/211024/0_time_seg.txt", "r")
+f_write = open("../4_Result/211024/0_time_seg_merged.txt", "w")
 
 lines = f_read.readlines()
 n = 1
@@ -24,7 +24,7 @@ for line in lines:
     print(line)
     if n == 5:
         merge_data = merge_float(line)
-        f_write.write(str(seq) + " " + str(merge_data) + "\n")
+        f_write.write(str(seq) + " " + str(merge_data / 1000000) + "\n")
         seq = seq + 1
         n = 1
         merge_data = 0.0
