@@ -13,8 +13,8 @@ def merge_float(data):
     return merged
 
 
-f_read = open("../4_Result/211024/0_time_seg.txt", "r")
-f_write = open("../4_Result/211024/0_time_seg_merged.txt", "w")
+f_read = open("../4_Result/210509/0_time_seg.txt", "r")
+f_write = open("../4_Result/210509/0_time_seg_merged.txt", "w")
 
 lines = f_read.readlines()
 n = 1
